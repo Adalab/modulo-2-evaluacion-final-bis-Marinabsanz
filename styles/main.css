@@ -21,4 +21,17 @@
 
 
 
-  
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .button1, .button2 {
+    border: solid 1px;
+    margin: 20px;
+
+  }
