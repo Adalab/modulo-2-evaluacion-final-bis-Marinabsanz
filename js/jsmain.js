@@ -5,7 +5,7 @@ const userList = document.querySelector(".js-userslist");
 let userResults = [];
 let eachResult = "";
 
-function obtainDates() {
+const obtainDates = function () {
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
@@ -15,10 +15,12 @@ function obtainDates() {
 
   for (const userList of userResults) {
     eachResult += `<li class = "js-listUsers"  id="${userResults.results.name}">`;
+    eachResult += userList.results.name ;
+ 
   }
-
   eachResult += "</li>";
+
 }
 obtainDates();
-
-console.log(userList);
+userResults.innerHTML = eachResult;
+console.log(userResults);
