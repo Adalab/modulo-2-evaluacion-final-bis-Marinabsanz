@@ -23,10 +23,10 @@
 
   .buttons {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     width: 120px;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end;
+    justify-content: end;
 
   }
 
@@ -35,3 +35,5 @@
     margin: 20px;
 
   }
+
+  
