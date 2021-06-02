@@ -18,10 +18,10 @@ function obtainDates() {
   function showResults(eachResult) {
     userList;
     let html= '';
-    eachResult.forEach( profile  => {
-      const {user, location } = profile;
-   
-    html += `
+    eachResult.forEach(profile => {
+      const {user, location } = profile; 
+ 
+    html = `
     <li class = "UserRandom"  
     <p>User: ${data.user}</p>
     <p>Procedencia: ${data.location.city}</p>
@@ -31,9 +31,7 @@ function obtainDates() {
     });
   }
 
-  
-userList.innerHTML = html;
- 
-console.log(userList);
-    document.addEventListener('DomLoading', obtainDates())
+
+  userList.innerHTML = html;
+   window.onload= obtainDates();
 
