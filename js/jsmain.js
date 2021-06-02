@@ -3,24 +3,35 @@
 const url = "https://randomuser.me/api/?results=10";
 const userList = document.querySelector(".js-userslist");
 let userResults = [];
-let eachResult = "";
+let html = '';
 
-const obtainDates = function () {
+function obtainDates() {
   fetch(url)
-    .then((response) => response.json())
-    .then((data) => {
-      console.log(data);
-      userResults = data; //guardo datos
-    });
+    .then(response => response.json())
+    .then(data => showResults(data));
 
-  for (const userList of userResults) {
-    eachResult += `<li class = "js-listUsers"  id="${userResults.results.name}">`;
-    eachResult += userList.results.name ;
- 
-  }
-  eachResult += "</li>";
-
+      console.log(showResults)
 }
-obtainDates();
-userResults.innerHTML = eachResult;
-console.log(userResults);
+
+  function showResults(eachResult) {
+    userList;
+    let html= '';
+    eachResult.forEach( profile  => {
+      const {user, location } = profile;
+   
+    html += `
+    <li class = "UserRandom"  
+    <p>User: ${data.user}</p>
+    <p>Procedencia: ${data.location.city}</p>
+    <a href= "${data.picture}foto de perfil</a>
+    </li>` 
+ 
+    });
+  }
+
+
+userList.innerHTML = html;
+ 
+console.log(userList);
+    // document.addEventListener('DomLoading', obtainDates())
+
