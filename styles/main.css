@@ -36,7 +36,19 @@
 
   }
 
-  /* .imag1{
-    width: 150px;
-    height: 150px;
-  } */
+ .userslist{
+   display:flex;
+   flex-direction: row;
+   border: solid 1px;
+   flex-wrap:wrap
+ }
+
+  .userRandomList{
+
+    color: white;
+    background-color: blue;
+    border: solid 1px;
+    display:flex;
+    flex-direction: column;
+
+  }
