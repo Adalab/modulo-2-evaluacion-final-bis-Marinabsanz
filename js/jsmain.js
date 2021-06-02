@@ -1,32 +1,35 @@
 "use strict";
 
 const url = "https://randomuser.me/api/?results=10";
-const userList = document.querySelector(".js-userslist");
-let contenido = document.querySelector(".js-contenido");
+const userList = document.querySelector(".js-usersList");
+
 
 let html = "";
+let users= ''
 
 function obtainDates() {
   fetch(url)
     .then((response) => response.json())
-    .then((data) => showResults(data));
-}
+    .then((data) => showResults(data.results));
+} 
 
 function showResults(eachResult) {
   let html = "";
 
   eachResult.forEach((profile) => {
-    const { user, location } = profile;
+  const { Nombre, ciudad, pais,  } = profile;
 
     html += `
     <li>  
-    <p>User: ${data.user}</p>
-    <p>Procedencia: ${data.location.city}</p>
-    <a href= "${data.picture}foto de perfil</a>
+    <p>Nombre: ${profile.name.first} ${profile.name.last} </p>
+    <p>Ciudad: ${profile.location.city}</p>
+    <p>País : ${profile.location.country}</p>
+    <img class="imag1" src="${profile.picture.medium}"
+
     </li>`;
   });
 
-  contenido.innerHTML += html;
+  userList.innerHTML += html;
 }
 
 document.addEventListener("DOMContentLoaded", obtainDates);
