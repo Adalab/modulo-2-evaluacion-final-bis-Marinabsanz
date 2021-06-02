@@ -7,6 +7,8 @@ let userResults = [];
 //  userList.value = userResults.value;
 let html = "";
 
+
+
 function obtainDates() {
   fetch(url)
     .then((response) => response.json())
@@ -16,19 +18,23 @@ function obtainDates() {
 }
 
 function showResults(eachResult) {
-  
-  let html = "";
-  eachResult.forEach((results) => {
-    const { user, location } = results;
+ 
+  eachResult.forEach (profile => {
+    const { user, location } = profile;
+ 
+    let html = "";
 
     html += `
-    <li class = "UserRandom"  
+    <li>  
     <p>User: ${data.user}</p>
     <p>Procedencia: ${data.location.city}</p>
     <a href= "${data.picture}foto de perfil</a>
     </li>`;
+ 
   });
-}
 
+window.onload = obtainDates()
+obtainDates()
 contenido.innerHTML += html;
-window.onload = obtainDates();
+
+}
