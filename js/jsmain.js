@@ -12,9 +12,14 @@ const userList = document.querySelector(".js-usersList");
 
 ///SAludo inicial con el Promptt
 const username = prompt("¿Cómo te llamas?");
-document.querySelector(
-  ".js-welcome"
-).innerHTML = ` ¡Bienvenid@  a TwiterLab, ${username} !`;
+
+if (username === null) {
+  document.querySelector (".js-welcome").innerHTML = ` ¡Bienvenid@  a TwiterLab :)  !`;
+} else {
+  document.querySelector(".js-welcome").innerHTML = ` ¡Bienvenid@  a TwiterLab, ${username} !`;
+}
+
+
 //////////
 
 let html = "";
