@@ -4,11 +4,18 @@ document.addEventListener("DOMContentLoaded", obtainDates);
 //////////////Buttons  delete and save y reload
 const deleteBtn = document.querySelector(".js-delete");
 const saveBtn = document.querySelector("js-save");
-const reloadBtn= document.getElementById('reload');
+const reloadBtn = document.getElementById("reload");
 ///////////////////////////////////////////////////////
 
 const url = "https://randomuser.me/api/?results=10";
 const userList = document.querySelector(".js-usersList");
+
+///SAludo inicial con el Promptt
+const username = prompt("¿Cómo te llamas?");
+document.querySelector(
+  ".js-welcome"
+).innerHTML = ` ¡Bienvenid@  a TwiterLab, ${username} !`;
+//////////
 
 let html = "";
 let users = "";
@@ -36,20 +43,17 @@ function showResults(eachResult) {
   userList.innerHTML += html;
 }
 
-
 //boton para recargar
 
 function reload() {
   location.reload();
 }
-reloadBtn.addEventListener("click", reload, false );
-
+reloadBtn.addEventListener("click", reload, false);
 
 ///////////Cambiar color favoritos  //---guardar localS
 
-
 // function selectUserFav(evt) {
 //   evt.currentTarget;
-//   const currentSelect = evt.currentTarget; 
-//   currentSelect.classList.toggle("changeColor"); 
+//   const currentSelect = evt.currentTarget;
+//   currentSelect.classList.toggle("changeColor");
 // }
