@@ -46,9 +46,15 @@
   .userRandomList{
 
     color: white;
-    background-color: blue;
+    background-color: rgb(160, 157, 147);
     border: solid 1px;
     display:flex;
     flex-direction: column;
 
+  }
+
+
+
+  changeColor{
+    background-color: black;
   }

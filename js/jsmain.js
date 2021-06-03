@@ -1,11 +1,12 @@
 "use strict";
 
 document.addEventListener("DOMContentLoaded", obtainDates);
-//////////////Buttons  delete and save
+//////////////Buttons  delete and save y reload
 const deleteBtn = document.querySelector(".js-delete");
 const saveBtn = document.querySelector("js-save");
-
+const reloadBtn= document.getElementById('reload');
 ///////////////////////////////////////////////////////
+
 const url = "https://randomuser.me/api/?results=10";
 const userList = document.querySelector(".js-usersList");
 
@@ -19,8 +20,6 @@ function obtainDates() {
 }
 
 function showResults(eachResult) {
-  let html = "";
-
   eachResult.forEach((data) => {
     const { Nombre, ciudad, pais } = data;
 
@@ -37,7 +36,20 @@ function showResults(eachResult) {
   userList.innerHTML += html;
 }
 
-// function deleteDocs(){
 
-//  }
-// saveBtn.addEventListener('click' deleteDocs);
+//boton para recargar
+
+function reload() {
+  location.reload();
+}
+reloadBtn.addEventListener("click", reload, false );
+
+
+///////////Cambiar color favoritos  //---guardar localS
+
+
+// function selectUserFav(evt) {
+//   evt.currentTarget;
+//   const currentSelect = evt.currentTarget; 
+//   currentSelect.classList.toggle("changeColor"); 
+// }
